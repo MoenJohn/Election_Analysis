@@ -21,8 +21,7 @@ print("The time right now is ", now)
 import csv
 import os
 
-print(os.getcwd())
-
+# A direct path to the resource folder in case there are issues
 #BASE = os.path.dirname(os.path.abspath(__file__))
 #file_to_load = os.path.join(BASE, 'Resources', 'election_results.csv')
 
@@ -33,3 +32,16 @@ with open(file_to_load) as election_data:
 
     # Print the file object.
      print(election_data)
+
+
+
+# Create a filename variable to a direct or indirect path to the file.
+file_to_save = os.path.join("analysis", "election_analysis.txt")
+
+# Use the open statement to open the file as a text file.
+outfile = open(file_to_save, "w")
+# Write some data to the file.
+outfile.write("Hello World")
+
+# Close the file
+outfile.close()
