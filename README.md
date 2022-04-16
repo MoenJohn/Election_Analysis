@@ -6,14 +6,27 @@ This election audit analysis was requested by the election commission, originaly
 
 
 ## Election-Audit Results: 
-Using a bulleted list, address the following election outcomes. Use images or examples of your code as support where necessary.
 
 * How many votes were cast in this congressional election?
-    There were 369,711 Votes in this election. This was verified through counting every vote and can be seen as the final line in the raw data as well
-    ["election_results_total_votes.png"]("Resources/election_results_total_votes.png")
+
+    There were **369,711 Votes** in this election. This was verified through counting every vote (upper image) and can be seen as the final line in the raw data as well. (lower image, the top line of the date is a header)
+    
+    ![election_results_total_votes.png](Resources/election_results_total_votes.png)
+    
+    ![election_results_total_counts_csv](Resources/total_votes_csv.png)
     
    
 * Breakdown of total votes by county
+
+   To get the total votes of each county I cycled through every vote and added the vote to a county list. This code is dynamic and adds county names on the fly; this will allow it to be done with any county name and any number of counties. This brief code snippet shows the process
+   
+   ![counting_counties](Resources/election_results_counting_counties.png)
+   
+   After acquiring a list of total votes by county, the winner was found by adding the name, vote count, and vote percentage count to a 'winner' variable that was overridden by anything with larger totals. The code snippet below illistrates the process
+   
+   ![county_winner](Resources/election_results_winning_county.png)
+   
+   Below are the results of county total votes
 
   |  County | # of Total Votes | % of Total Votes  |
   | ------------- | ------------- | ------------- |
@@ -21,10 +34,15 @@ Using a bulleted list, address the following election outcomes. Use images or ex
   | Denver  | 306,055  | 82.8%  |
   | Arapahoe  | 24,801  | 6.7%  |
 
+
 * Which county had the largest number of votes?
-    Denver county had by far the largest number of votes at 306,005, rougly a factor of ten greater than both Jefferson and Arapahoe counties
+
+    **Denver County** had by far the largest number of votes at **306,005** with a whopping **82.8%** of the total vote, rougly a factor of ten greater than both Jefferson and Arapahoe counties
+
 
 * Breakdown of total votes by candidate
+
+    The process of counting the total votes by candidate was done in precisely the same way as the counties. Below are the results.
 
   |  County | # of Total Votes | % of Total Votes  |
   | ------------- | ------------- | ------------- |
@@ -32,10 +50,14 @@ Using a bulleted list, address the following election outcomes. Use images or ex
   | Diana DeGette  | 272,892  | 73.8%  |
   | Raymon Anthony Doane  | 11,606  |3.1%  |
 
+
 * Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
-    According to my results the winner of the election was Diana DeGette, with a landslide victory of 73.8% of all votes and total vote count of 73.8%
+    According to my results **the winner of the election was Diana DeGette**, with a landslide victory of **73.8% of all votes** and total vote count of **272,892**
+
 
 # Election-Audit Summary: 
-In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
+In summary, this code can be used for any sort of upcoming election as is as long as the format of the input data remains the same. As was described above, the candidate and county names can be read in dynamically with no limit on the number of each. However, there are a couple things that could be done to improve the code to provide more information in the future. 
 
-In summary, this code can be used for any sort of upcoming election as is as long as the format of the input data remains the same. However, there are a couple things that could be done to improve the code. For starters, by counting which votes for certain candidates came from which counties. This information doesn't influence the results of the election in anyway but it would extra data and insight into the demograhics of the candidates voters. This change would be possible with the amount of information we have available here, but if there was any additional data that the commity would like to see the program couldg be motified to show that as well. A couple examples would be voter data such as age for more demographic insights or the way the vote was cast (machine, vs by hand, vs machine read card) to see if there was any influence or coorolation with voting methods and results. Finaly, adding in county total population data would allow us to learn about voter turnout and participatino in each county.
+For starters, by counting which votes for certain candidates came from which counties. This information doesn't influence the results of the election in anyway but it would extra data and insight into the demograhics of the candidates voters. This change would be possible with the amount of information we have available here, but if there was any additional data that the commision would like to see the program could be modified to show that as well. A couple examples would be anonomous voter data such as age for more demographic insights or the way the vote was cast (machine, vs by hand, vs machine read card) to see if there was any influence or coorolation with voting methods and results. Finaly, adding in county total population data would allow us to learn about voter turnout and participatin in each county.
+
+I would also recommend that records of this data not only be kept for posterity but also for future analysis. With a database of past election results we can map changes over time for trends and other insights.
