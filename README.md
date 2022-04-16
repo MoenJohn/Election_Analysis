@@ -1,7 +1,7 @@
 # Election Analysis
 This is an analysis of election results followed by recommendations for the election commission for upcoming elections.
 
-## Overview of Election Audit: Explain the purpose of this election audit analysis.
+## Overview of Election Audit
 This election audit analysis was requested by the election commission, originally to review a database of all votes and review which candidate had the most votes. It was later expanded to include voter turnouts by county as well. To do this I used a python script to read the contents of a voter results csv file, extract and analyze the relevant information inside, and write the results to an output file. With the information provided we can assess the number of total votes, votes by county, and candidate vote percentages and totals, all of which are detailed below. The raw election results file is kept in the _Resources_ directory, while the output or final analysis is written to the _analysis_ directory. 
 
 
